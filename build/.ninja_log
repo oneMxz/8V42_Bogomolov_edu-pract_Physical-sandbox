@@ -1,0 +1,16 @@
+# ninja log v7
+4	766	7745180703338879	CMakeFiles/sandbox.dir/src/MenuButton.cpp.obj	9026c69183e3f9fa
+16	1058	7745180703492822	CMakeFiles/sandbox.dir/src/world.cpp.obj	2e2304ab6772e2ef
+10	1093	7745180703424457	CMakeFiles/sandbox.dir/src/main.cpp.obj	84be2ccab2ac0e28
+1093	2587	7745180714252688	sandbox.exe	dd418ff95ea661ec
+18	898	7745197083837163	CMakeFiles/sandbox.dir/src/world.cpp.obj	2e2304ab6772e2ef
+14	1101	7745197083781770	CMakeFiles/sandbox.dir/src/main.cpp.obj	84be2ccab2ac0e28
+1101	2520	7745197094619040	sandbox.exe	dd418ff95ea661ec
+9	945	7745199921118876	CMakeFiles/sandbox.dir/src/main.cpp.obj	84be2ccab2ac0e28
+948	2205	7745199930579378	sandbox.exe	dd418ff95ea661ec
+24	1217	7745201108237544	CMakeFiles/sandbox.dir/src/main.cpp.obj	84be2ccab2ac0e28
+1218	2794	7745201120174535	sandbox.exe	dd418ff95ea661ec
+7	1247	7745202253740764	CMakeFiles/sandbox.dir/src/main.cpp.obj	84be2ccab2ac0e28
+1248	2619	7745202266203441	sandbox.exe	dd418ff95ea661ec
+10	896	7745205513745596	CMakeFiles/sandbox.dir/src/world.cpp.obj	2e2304ab6772e2ef
+898	2529	7745205522645286	sandbox.exe	dd418ff95ea661ec
