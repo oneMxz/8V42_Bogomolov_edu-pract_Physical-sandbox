@@ -13,6 +13,12 @@
 },
 {
   "directory": "C:/Users/79145/Sandboxproject/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe -IC:/Users/79145/Sandboxproject/include -IC:/libraries/SFML-2.6.2/include -g -std=gnu++17 -o CMakeFiles\\sandbox.dir\\src\\music.cpp.obj -c C:\\Users\\79145\\Sandboxproject\\src\\music.cpp",
+  "file": "C:\\Users\\79145\\Sandboxproject\\src\\music.cpp",
+  "output": "CMakeFiles\\sandbox.dir\\src\\music.cpp.obj"
+},
+{
+  "directory": "C:/Users/79145/Sandboxproject/build",
   "command": "C:\\msys64\\mingw64\\bin\\c++.exe -IC:/Users/79145/Sandboxproject/include -IC:/libraries/SFML-2.6.2/include -g -std=gnu++17 -o CMakeFiles\\sandbox.dir\\src\\world.cpp.obj -c C:\\Users\\79145\\Sandboxproject\\src\\world.cpp",
   "file": "C:\\Users\\79145\\Sandboxproject\\src\\world.cpp",
   "output": "CMakeFiles\\sandbox.dir\\src\\world.cpp.obj"

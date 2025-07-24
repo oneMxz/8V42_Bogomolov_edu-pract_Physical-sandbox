@@ -20,6 +20,7 @@ target_link_libraries(sandbox
     sfml-graphics
     sfml-window
     sfml-system
+    sfml-audio
 )
 
 # Копирование DLL
@@ -32,6 +33,18 @@ add_custom_command(TARGET sandbox POST_BUILD
         $<TARGET_FILE_DIR:sandbox>
     COMMAND ${CMAKE_COMMAND} -E copy
         "${SFML_PATH}/bin/sfml-system-2.dll"
+        $<TARGET_FILE_DIR:sandbox>
+    COMMAND ${CMAKE_COMMAND} -E copy  
+        "${SFML_PATH}/bin/sfml-audio-2.dll"
+        $<TARGET_FILE_DIR:sandbox>
+    COMMAND ${CMAKE_COMMAND} -E copy
+        "${SFML_PATH}/bin/openal32.dll"
+        $<TARGET_FILE_DIR:sandbox>
+)
+ # Копирование музыки
+add_custom_command(TARGET sandbox POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy
+        "${CMAKE_SOURCE_DIR}/3d20874f20174bd.mp3"
         $<TARGET_FILE_DIR:sandbox>
 )
 

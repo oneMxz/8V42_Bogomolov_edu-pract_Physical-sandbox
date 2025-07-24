@@ -4,6 +4,7 @@
 #include "MenuButton.h"
 #include "world.h"
 #include "Constants.h"
+#include "music.h"
 
 // Состояния приложения
 enum AppState { MENU, GAME };
@@ -18,13 +19,20 @@ int main() {
     if (!font.loadFromFile("AnkhSanctuary-PVK0B.ttf")) {
         return 1;
     }
+    // Менеджер музыки
+    MusicManager musicManager;
+    if (!musicManager.load("3d20874f20174bd.mp3")) {
+        return 1;
+    }
+    musicManager.setVolume(70.0f);
+    musicManager.play();
+    bool musicEnabled = true;
     
-    // Создание кнопок
+    // Создание кнопок по центру окна
     std::vector<MenuButton> buttons;
     buttons.push_back(MenuButton("PLAY", font, sf::Vector2f(400, 200), sf::Vector2f(200, 50)));
-    buttons.push_back(MenuButton("SAVES", font, sf::Vector2f(400, 280), sf::Vector2f(200, 50)));
-    MenuButton& musicButton = buttons.emplace_back("MUSIC: ON", font, sf::Vector2f(400, 360), sf::Vector2f(200, 50));
-    buttons.push_back(MenuButton("EXIT", font, sf::Vector2f(400, 440), sf::Vector2f(200, 50)));
+    buttons.push_back(MenuButton("MUSIC: ON", font, sf::Vector2f(400, 280), sf::Vector2f(200, 50)));
+    buttons.push_back(MenuButton("EXIT", font, sf::Vector2f(400, 360), sf::Vector2f(200, 50)));
     
     // Для FPS
     sf::Clock fpsClock;
@@ -38,7 +46,6 @@ int main() {
     
     // Состояние приложения
     AppState currentState = MENU;
-    bool musicEnabled = true;
     bool paused = false;
     
     // Игровой мир
@@ -60,12 +67,12 @@ int main() {
             if (event.type == sf::Event::Resized) {
                 sf::FloatRect visibleArea(0, 0, event.size.width, event.size.height);
                 window.setView(sf::View(visibleArea));
-                
-                // Обновление позиций кнопок при изменении размера окна
-                buttons[0].update(sf::Vector2f(event.size.width/2.0f, 200));
-                buttons[1].update(sf::Vector2f(event.size.width/2.0f, 280));
-                buttons[2].update(sf::Vector2f(event.size.width/2.0f, 360));
-                buttons[3].update(sf::Vector2f(event.size.width/2.0f, 440));
+    
+                // Центрируем кнопки при изменении размера
+                sf::Vector2f newCenter(event.size.width / 2.0f, 0);
+                buttons[0].setPosition(sf::Vector2f(newCenter.x, 200));
+                buttons[1].setPosition(sf::Vector2f(newCenter.x, 280));
+                buttons[2].setPosition(sf::Vector2f(newCenter.x, 360));
             }
             // Обработка клавиатуры
             if (event.type == sf::Event::KeyPressed) {
@@ -105,19 +112,37 @@ int main() {
                                 "Sandbox Physics"
                             );
                             window.setFramerateLimit(60);
-                        } else if (i == 1) { // Saves
-                            // Логика сохранений
-                        } else if (i == 2) { // Music
-                            musicEnabled = !musicEnabled;
+                        } else if (i == 1) { // Music
+                            musicManager.toggle();
+                            musicEnabled = musicManager.isPlaying();
                             if (musicEnabled) {
-                                musicButton.setText("MUSIC: ON");
+                                buttons[1].setText("MUSIC: ON");
                             } else {
-                                musicButton.setText("MUSIC: OFF");
+                                buttons[1].setText("MUSIC: OFF");
                             }
-                        } else if (i == 3) { // Exit
+                        } else if (i == 2) { // Exit
                             window.close();
                         }
                     }
+                }
+            }
+
+            // Обработка клавиатуры для управления музыкой
+            if (event.type == sf::Event::KeyPressed) {
+                if (event.key.code == sf::Keyboard::M) {
+                    musicManager.toggle();
+                    musicEnabled = musicManager.isPlaying();
+                    if (musicEnabled) {
+                        buttons[1].setText("MUSIC: ON");
+                    } else {
+                        buttons[1].setText("MUSIC: OFF");
+                    }
+                }
+                if (event.key.code == sf::Keyboard::Up) {
+                    musicManager.setVolume(musicManager.getVolume() + 10);
+                }
+                if (event.key.code == sf::Keyboard::Down) {
+                    musicManager.setVolume(musicManager.getVolume() - 10);
                 }
             }
             
@@ -207,6 +232,7 @@ int main() {
         
         // Всегда отображаем FPS
         window.draw(fpsText);
+        
         
         window.display();
     }
