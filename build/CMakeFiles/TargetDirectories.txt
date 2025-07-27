@@ -1,3 +1,0 @@
-C:/Users/79145/Sandboxproject/build/CMakeFiles/sandbox.dir
-C:/Users/79145/Sandboxproject/build/CMakeFiles/edit_cache.dir
-C:/Users/79145/Sandboxproject/build/CMakeFiles/rebuild_cache.dir
