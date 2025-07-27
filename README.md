@@ -58,9 +58,7 @@ Sandbox Game - это интерактивная физическая песоч
 Перед тем, как начать компиляцию проекта, необходимо установить библиотеку SFML.
 ### Установка SFML
 Для Windows — скачать и установить SFML с официального сайта библиотеки (https://www.sfml-dev.org/download/sfml/2.6.2/).
-Выберите версию, совместимую с вашим компилятором, в случае проекта это 64-битная версия. Так как проект был разработан с использованием компилятора GCC, скачиваем GCC 13.1.0 MinGW (SEH). Далее, создайте в любом удобном для вас месте на компьютере папку, куда вы сможете разархивировать библиотеки (например: C:\libraries). Затем распакуйте скачанный архив SFML в эту папку. Путь к данной директории стоит запомнить для последующей настройки. В VS Code установить расширение C/C++. При последующей попытке запуска программы возникнет ошибка, связанная с тем, что программа не видит SFML. Для того, чтобы исправить данную ошибку, необходимо настроить путь к директории include библиотеки SFML: открыть файл .vscode/c_cpp_properties.json и указать пути к заголовочным файлам SFML. Более детально ознакомиться с настройкой библиотеки SFML можно по ссылкам ниже.
-- https://rutube.ru/video/e1e15c9869d445fe6c4b6b20a83ea990/
-- http://www.youtube.com/watch?v=rZE700aaT5I
+Выберите версию, совместимую с вашим компилятором, в случае проекта это 64-битная версия. Так как проект был разработан с использованием компилятора GCC, скачиваем GCC 13.1.0 MinGW (SEH). Далее, создайте в любом удобном для вас месте на компьютере папку, куда вы сможете разархивировать библиотеки (например: C:\libraries). Затем распакуйте скачанный архив SFML в эту папку. Путь к данной директории стоит запомнить для последующей настройки. В VS Code установить расширение C/C++. При последующей попытке запуска программы возникнет ошибка, связанная с тем, что программа не видит SFML. Для того, чтобы исправить данную ошибку, необходимо настроить путь к директории include библиотеки SFML: открыть файл .vscode/c_cpp_properties.json и указать пути к заголовочным файлам SFML. Более детально ознакомиться с настройкой библиотеки SFML можно по ссылкам ниже в разделе дополнительных ресурсов.
 
 ### Клонирование репозитория
 `git clone https://github.com/yourusername/sandbox-game.git`
@@ -167,8 +165,6 @@ Before you can start compiling a project, you need to install the SFML library.
 ### Installing SFML
 For Windows — download and install SFML from the library's official website (https://www.sfml-dev.org/download/sfml/2.6.2 /).
 Choose a version that is compatible with your compiler. In the case of a project, it is a 64-bit version. Since the project was developed using the GCC compiler, download GCC 13.1.0 MinGW (SEH). Next, create a folder on your computer where you can unzip the libraries (for example: C:\libraries ). Then unzip the downloaded SFML archive to this folder. The path to this directory should be remembered for subsequent configuration. Install the C/C++ extension in VS Code. A subsequent attempt to run the program will result in an error due to the fact that the program does not see SFML. In order to fix this error, you need to configure the path to the include directory of the SFML library: open the file.vscode/c_cpp_properties.json and specify the paths to the SFML header files. To learn more about configuring the SFML library, follow the links below.
-- https://rutube.ru/video/e1e15c9869d445fe6c4b6b20a83ea990/
-- http://www.youtube.com/watch?v=rZE700aaT5I
 
 ### Cloning the repository
 `git clone https://github.com/yourusername/sandbox-game.git`
