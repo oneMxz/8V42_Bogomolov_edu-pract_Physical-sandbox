@@ -16,7 +16,7 @@ int main() {
     
     // Шрифт
     sf::Font font;
-    if (!font.loadFromFile("AnkhSanctuary-PVK0B.ttf")) {
+    if (!font.loadFromFile("AnkhSanctuary-PVK0B.ttf")){
         return 1;
     }
     // Менеджер музыки

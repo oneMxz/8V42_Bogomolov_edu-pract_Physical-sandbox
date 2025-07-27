@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "sandbox.exe"
+			"path" : "bin/sandbox.exe"
 		},
 		{
-			"path" : "sandbox.pdb"
+			"path" : "bin/sandbox.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -30,7 +30,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 16,
+				"line" : 15,
 				"parent" : 0
 			},
 			{
@@ -42,7 +42,7 @@
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 19,
+				"line" : 17,
 				"parent" : 0
 			},
 			{
